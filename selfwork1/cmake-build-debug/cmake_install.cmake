@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/rain2/OneDrive/Desktop/2 куср  1с/ООП/task1
+# Install script for directory: C:/Users/rain2/OneDrive/Desktop/2 куср  1с/OOP/selfwork1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/rain2/OneDrive/Desktop/2 куср  1с/ООП/task1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/rain2/OneDrive/Desktop/2 куср  1с/OOP/selfwork1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

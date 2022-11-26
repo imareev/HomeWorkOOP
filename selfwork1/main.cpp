@@ -12,7 +12,7 @@ struct AEROFLOT {
 int main() {
     int size=1;
     AEROFLOT aeroflot[7];
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 7; i++) {
         std::cout << "NAZN:";
         std::cin >> aeroflot[i].NAZN;
         std::cout << "NUMR:";
@@ -38,7 +38,7 @@ int main() {
     }
     if (doesExist == size)
     {
-        std::cout<<"does't exist";
+        std::cout<<"doesn't exist";
     }
         return 0;
 }

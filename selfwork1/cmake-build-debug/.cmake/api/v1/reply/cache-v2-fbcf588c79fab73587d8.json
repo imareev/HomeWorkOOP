@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/rain2/OneDrive/Desktop/2 \u043a\u0443\u0441\u0440  1\u0441/\u041e\u041e\u041f/task1/cmake-build-debug"
+			"value" : "c:/Users/rain2/OneDrive/Desktop/2 \u043a\u0443\u0441\u0440  1\u0441/OOP/selfwork1/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/rain2/OneDrive/Desktop/2 \u043a\u0443\u0441\u0440  1\u0441/\u041e\u041e\u041f/task1"
+			"value" : "C:/Users/rain2/OneDrive/Desktop/2 \u043a\u0443\u0441\u0440  1\u0441/OOP/selfwork1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/rain2/OneDrive/Desktop/2 \u043a\u0443\u0441\u0440  1\u0441/\u041e\u041e\u041f/task1/cmake-build-debug"
+			"value" : "C:/Users/rain2/OneDrive/Desktop/2 \u043a\u0443\u0441\u0440  1\u0441/OOP/selfwork1/cmake-build-debug"
 		},
 		{
 			"name" : "task1_IS_TOP_LEVEL",
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/rain2/OneDrive/Desktop/2 \u043a\u0443\u0441\u0440  1\u0441/\u041e\u041e\u041f/task1"
+			"value" : "C:/Users/rain2/OneDrive/Desktop/2 \u043a\u0443\u0441\u0440  1\u0441/OOP/selfwork1"
 		}
 	],
 	"kind" : "cache",
