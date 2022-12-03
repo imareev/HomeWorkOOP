@@ -72,6 +72,7 @@ int WriteOfFile(int records) {
 
 
     }
+    fout.close();
 }
 
 int ReadOfFile(int iRecorders) {
@@ -114,6 +115,7 @@ int ReadOfFile(int iRecorders) {
         }
         return 0;
     }
+    fout.close();
 }
 
 int main() {
