@@ -1,0 +1,3 @@
+C:/Users/rain2/OneDrive/Desktop/2 куср  1с/OOP/friendClass/cmake-build-debug/CMakeFiles/friendClass.dir
+C:/Users/rain2/OneDrive/Desktop/2 куср  1с/OOP/friendClass/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/rain2/OneDrive/Desktop/2 куср  1с/OOP/friendClass/cmake-build-debug/CMakeFiles/rebuild_cache.dir
