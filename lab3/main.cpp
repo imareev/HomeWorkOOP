@@ -3,76 +3,57 @@
 #include <stdlib.h>
 #include <string>
 
+
 struct Scan_info {
-    char model[20]; // наименование модели
+    std::string model; // наименование модели
     int price; // цена
-    double x_s1ze; // горизонтальный размер области сканирования
-    double y_s1ze; // вертикальный размер области сканирования
+    double x_size; // горизонтальный размер области сканирования
+    double y_size; // вертикальный размер области сканирования
     int optr; // оптическое разрешение
     int grey; // число градацийсерого
 };
 
 int WriteOfFile(int records) {
     int x = records;
-    Scan_info scanInfo[7];
+    Scan_info info[7];
+    std::ifstream fin("C:\\Users\\MiBook\\Desktop\\lab3\\scan_info.txt", std::ios::in);
+    if (fin.is_open())
+    {
+        fin.seekg(0, std::ios::end);
+        int bytes = fin.tellg();
+        int count = 0;
+        fin.seekg(0, std::ios::beg);
+        fin.read((char*)&count, sizeof(int));
+        char* readBytes = new char[bytes - 4];
+        fin.read(readBytes, bytes - 4);
+        fin.close();
 
-    std::ofstream fout("txt.dat", std::ios_base::binary);
-    fout.write((char *) &x, sizeof(int));
-    for (int i = 0; i < records; i++) {
-        fout.write((char *) &i, sizeof(int));
-        std::cout << "enter data for" << " " << i + 1 << " " << "model" << std::endl;
-        std::cout << "enter model:";
-        std::string s;
-        std::cin >> s;
-        s.copy(scanInfo[i].model, 19);
-        scanInfo[i].model[20] = '\0';
-        fout.write((char *) &scanInfo[i].model, sizeof(char[20]));
-
-        std::cout << "enter price:";
-
-        std::cin >> scanInfo[i].price;
-        if (!std::cin) {
-            std::cout << "Enter type 'int' of value! please try again ";
-            exit(0);
-        }
-        fout.write((char *) &scanInfo[i].price, sizeof(int));
-
-        std::cout << "enter x:";
-        scanInfo[i].x_s1ze = 1;
-        std::cin >> scanInfo[i].x_s1ze;
-        if (!std::cin) {
-            std::cout << "Enter type 'int' of value! please try again ";
-            exit(0);
-        }
-        fout.write((char *) &scanInfo[i].x_s1ze, sizeof(double));
-
-        std::cout << "enter y:";
-        std::cin >> scanInfo[i].y_s1ze;
-        if (!std::cin) {
-            std::cout << "Enter type 'int' of value! please try again ";
-            exit(0);
-        }
-        fout.write((char *) &scanInfo[i].y_s1ze, sizeof(double));
-
-        std::cout << "enter g:";
-        std::cin >> scanInfo[i].grey;
-        if (!std::cin) {
-            std::cout << "Enter type 'int' of value! please try again ";
-            exit(0);
-        }
-        fout.write((char *) &scanInfo[i].grey, sizeof(int));
-
-        std::cout << "enter optr:";
-        std::cin >> scanInfo[i].optr;
-        if (!std::cin) {
-            std::cout << "Enter type 'int' of value! please try again ";
-            exit(0);
-        }
-        fout.write((char *) &scanInfo[i].optr, sizeof(int));
-
-
+        std::ofstream fout("C:\\Users\\MiBook\\Desktop\\lab3\\scan_info.txt", std::ios::out | std::ios::binary);
+        count++;
+        fout.write((char*)&count, sizeof(int));
+        fout.write((char*)&info->price, sizeof(int));
+        fout.write((char*)&info->x_size, sizeof(double));
+        fout.write((char*)&info->y_size, sizeof(double));
+        fout.write((char*)&info->optr, sizeof(int));
+        fout.write((char*)&info->grey, sizeof(int));
+        fout.write(info->model.c_str(), info->model.size() + 1);
+        fout.write(readBytes, bytes - 4);
+        fout.close();
+        delete[] readBytes;
     }
-    fout.close();
+    else
+    {
+        std::ofstream fout("C:\\Users\\MiBook\\Desktop\\lab3\\scan_info.txt", std::ios::out | std::ios::binary);
+        int count = 1;
+        fout.write((char*)&count, sizeof(int));
+        fout.write((char*)&info->price, sizeof(int));
+        fout.write((char*)&info->x_size, sizeof(double));
+        fout.write((char*)&info->y_size, sizeof(double));
+        fout.write((char*)&info->optr, sizeof(int));
+        fout.write((char*)&info->grey, sizeof(int));
+        fout.write(info->model.c_str(), info->model.size() + 1);
+        fout.close();
+    }
 }
 
 int ReadOfFile(int iRecorders) {
@@ -98,11 +79,11 @@ int ReadOfFile(int iRecorders) {
             fout.read((char *) &scanInfo[i].price, sizeof(int));
             std::cout << scanInfo[i].price <<"$"<< " ";
 
-            fout.read((char *) &scanInfo[i].x_s1ze, sizeof(double));
-            std::cout << scanInfo[i].x_s1ze <<"in"<< " ";
+            fout.read((char *) &scanInfo[i].x_size, sizeof(double));
+            std::cout << scanInfo[i].x_size <<"in"<< " ";
 
-            fout.read((char *) &scanInfo[i].y_s1ze, sizeof(double));
-            std::cout << scanInfo[i].y_s1ze <<"in" " ";
+            fout.read((char *) &scanInfo[i].y_size, sizeof(double));
+            std::cout << scanInfo[i].y_size <<"in" " ";
 
             fout.read((char *) &scanInfo[i].grey, sizeof(int));
             std::cout << scanInfo[i].grey << " ";

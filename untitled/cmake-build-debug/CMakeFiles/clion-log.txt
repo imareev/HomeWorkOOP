@@ -1,0 +1,1 @@
+CMakeLists.txt not found in C:\Users\rain2\OneDrive\Desktop\2 куср  1с\OOP\untitled Select CMakeLists.txt
