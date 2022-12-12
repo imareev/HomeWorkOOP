@@ -7,11 +7,6 @@ enum Country {
     UK,
     FINLAND
 };
-enum TypePlane {
-    CARGO,
-    PASS
-};
-
 class Airport {
 public:
     Country country;
@@ -19,6 +14,15 @@ public:
     int maxLoad;
     bool LandRemit;
     double maxAirWeight;
+    Airport(Country country,int numberOfLandingStrips,int maxLoad,bool LandRemit,double maxAirWeight;)
+    {
+        this->country=country;
+        this->numberOfLandingStrips=numberOfLandingStrips;
+        this->maxLoad=maxLoad;
+        this->LandRemit=LandRemit;
+        this->maxAirWeight=maxAirWeight;
+    }
+
 private:
     double Oil;
     int currentLoad;
@@ -26,12 +30,42 @@ private:
 
 class Plane {
 public:
-    TypePlane typePlane;
     Country CurrCountry;
     double weight;
-    int maxPassengers;
 private:
     double Oil;
+};
+
+class passPlane : public Plane {
+public:
+    double MaxPessengeres;
+    bool PlaceForEat;
+
+    passPlane(Country country, double weight, double MaxPessengeres, bool PlaceForEat) {
+        this->country = country;
+        this->weight = weight;
+        this->MaxPessengeres = MaxPessengeres;
+        this->PlaceForEat = PlaceForEat;
+    }
+    void PrintINF(){
+        std::cout<< this->CurrCountry<<" "<<this->weight<<" "<<this->MaxPessengeres<<" "<< this->PlaceForEat;
+    }
+
+};
+
+class Cargo : public Plane {
+public:
+    double MaxWight;
+    int PilotSeat;
+    Cargo(Country country, double weight, double MaxW, int Pilot) {
+        this->country = country;
+        this->weight = weight;
+        this->MaxWight = MaxW;
+        this->PilotSeat = Pilot;
+    }
+    void PrintINF(){
+        std::cout<< this->CurrCountry<<" "<<this->weight<<" "<<this->MaxWight<<" "<< this->PilotSeat;
+    }
 };
 
 bool operator<(Plane plane1, Plane plane2) {
@@ -51,6 +85,5 @@ bool Trip(Airport airport, Plane plane) {
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
